@@ -5,18 +5,102 @@ Stylesheet: Main Stylesheet
 *************************************************/
 
 /*********************
-GENERAL STYLES
+Root
 *********************/
+:root {
+	font-size: 10px;
+}
+
+/*********************
+General
+*********************/
+body {
+	&.no-scroll {
+		overflow-x: hidden;
+		max-height: 100vh;
+		position: fixed;
+	}
+}
+
+.row {
+	&:before {
+		display: none;
+	}
+}
+
+.row {
+	&.table {
+		&:before {
+			display: table;
+		}
+	}
+}
+
+/*********************
+Colors
+*********************/
+$black: rgba(0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
+
+/*********************
+Social Media colors
+*********************/
+$linkedin: rgba(0, 123, 182, 1);
+$facebook: rgba(59, 89, 152, 1);
+$twitter: rgba(0, 182, 241, 1);
+$youtube: rgba(179, 18, 23, 1);
+$instagram: rgba(195, 42, 163, 1);
+$pinterest: rgba(203, 32, 39, 1);
+$google: rgba( 223, 74, 50, 1);
+$snapchat: rgba(255, 252, 0, 1);
+$tumblr: rgba(54, 70, 93, 1);
+$whatsapp: rgba(37, 211, 102, 1);
+$vimeo: rgba(69, 187, 255, 1);
+$foursquare: rgba(252, 69, 117, 1);
+$skype: rgba(0, 175, 240, 1);
+$android: rgba(164, 198, 57, 1);
+$flickr: rgba(244, 0, 131, 1);
+$yahoo: rgba(67, 2, 151, 1);
+$soundcloud: rgba(255, 85, 0, 1);
+$spotify: rgba(30, 215, 96, 1);
+$dribbble: rgba(234, 76, 137, 1);
+$reddit: rgba(255, 87, 0, 1);
+$deviantart: rgba(74, 93, 78, 1);
+
+/*********************
+Fonts
+*********************/
+$title: 'Arial', sans-serif;
+$read: 'Times New Roman', sans-serif;
+$fontawesome: 'FontAwesome';
 
 /*********************
 LINK STYLES
 *********************/
 a, a:visited {
+	transition: all 300ms ease-in-out;
 
 	// Mobile tap color
 	&:link {
 		//Highlight links on iOS, Similar to :hover for mobile devices.
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+
+	&:hover {
+
+	}
+}
+
+a {
+	&.btn {
+		border-radius: .5rem;
+		display: inline-block;
+		font-size: 1.4rem;
+		padding: 1rem 1.5rem;
+		text-transform: uppercase;
+		transition: all 300ms ease-in-out;
+		margin-bottom: 2rem;
+		overflow: hidden;
 	}
 }
 

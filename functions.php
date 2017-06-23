@@ -21,11 +21,13 @@ require_once(get_template_directory().'/assets/functions/comments.php');
 require_once(get_template_directory().'/assets/functions/page-navi.php'); 
 
 // Adds support for multiple languages
-require_once(get_template_directory().'/assets/translation/translation.php'); 
+require_once(get_template_directory().'/assets/translation/translation.php');
 
+// Adds image sizes
+require_once(get_template_directory().'/assets/functions/image-sizes.php');
 
 // Remove 4.2 Emoji Support
-// require_once(get_template_directory().'/assets/functions/disable-emoji.php'); 
+ require_once(get_template_directory().'/assets/functions/disable-emoji.php');
 
 // Adds site styles to the WordPress editor
 //require_once(get_template_directory().'/assets/functions/editor-styles.php'); 
