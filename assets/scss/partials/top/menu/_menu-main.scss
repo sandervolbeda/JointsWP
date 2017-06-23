@@ -1,0 +1,167 @@
+.main-menu {
+  display: none;
+}
+
+@include breakpoint(1024px) {
+  .main-menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;
+    left: 0;
+    background-color: $white;
+    z-index: 99999;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      background-color: $white;
+      box-shadow: 0 .3rem 1.2rem 0 rgba(0,0,0,0.15);
+
+      .logo-desktop {
+        img {
+          height: 6rem;
+          max-width: 16rem;
+        }
+      }
+    }
+
+    .logo-desktop {
+      display: flex;
+      align-items: center; /* align vertical */
+
+      img {
+        width: auto;
+        max-width: 20rem;
+        height: 8.6rem;
+        display: flex;
+        align-items: center; /* align vertical */
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+    }
+
+    .full-menu {
+      height: 8.6rem;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+
+      &.fixed {
+        height: 6rem;
+
+        #main-menu {
+          li {
+            a {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .menu-header-menu-container {
+        height: 100%;
+      }
+
+      #main-menu {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row;
+
+        li {
+          margin: 1rem 0 0 6rem;
+
+          &:first-child {
+            margin: 1rem 0 0 0;
+          }
+
+          &.active {
+            a {
+              border-bottom: .2rem solid $black;
+            }
+
+            ul {
+              &.sub-menu {
+                li {
+                  &.active {
+                    a {
+                      border-bottom: .2rem solid $black;
+                    }
+                  }
+
+                  a {
+                    border-bottom: .2rem solid transparent;
+                    transition: all 0.4s ease;
+
+                    &:hover {
+                      border-bottom: .2rem solid $black;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          a {
+            width: auto;
+            height: auto;
+            font-size: 1.7rem;
+            font-family: $title;
+            text-align: center;
+            color: $black;
+            padding: 0 0 .7rem 0;
+            border-bottom: .3rem solid transparent;
+            background-color: transparent;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+
+            &:hover {
+              border-bottom: .2rem solid $black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body {
+    &.ie, &.unknown {
+      .main-menu {
+        &.fixed {
+          border-top: .1rem solid $black;
+
+          .logo-desktop {
+            img {
+              height: auto;
+            }
+          }
+        }
+
+        .logo-desktop {
+          a {
+            height: 8.6rem;
+
+            img {
+              height: auto;
+            }
+          }
+        }
+
+        #main-menu {
+          li {
+            padding: 1rem 0 0 6rem;
+
+            &:first-child {
+              padding: 1rem 0 0 0;
+            }
+
+            a {
+              transition: all 0.4s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}
